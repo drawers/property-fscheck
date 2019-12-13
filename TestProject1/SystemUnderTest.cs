@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace TestProject1
 {
@@ -36,12 +37,13 @@ namespace TestProject1
 
 //        public static int MyMax(this IEnumerable<int> source)
 //        {
-//            if (source.Count() < 2)
+//            var enumerable = source.ToList();
+//            if (enumerable.Count < 2)
 //            {
 //                return Int32.MaxValue;
 //            }
 //
-//            return source.Skip(1).First();
+//            return enumerable.Skip(1).First();
 //        }
 
 

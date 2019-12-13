@@ -7,20 +7,20 @@ namespace TestProject1
     public class PropertyBased
     {
         [FsCheck.NUnit.Property]
-        public bool MyMaxIsInTheCollection(List<int> ints)
-        {
-            if (ints.Count == 0) return true;
-
-            return ints.Contains(ints.MyMax());
-        }
-
-        [FsCheck.NUnit.Property]
-        public bool MyMax(List<int> ints)
+        public bool NoGreaterElementThanMyMax(List<int> ints)
         {
             if (ints.Count == 0) return true;
 
             var myMax = ints.MyMax();
             return ints.TrueForAll(x => x <= myMax);
+        }
+
+        [FsCheck.NUnit.Property]
+        public bool MyMaxIsInTheCollection(List<int> ints)
+        {
+            if (ints.Count == 0) return true;
+
+            return ints.Contains(ints.MyMax());
         }
     }
 }
